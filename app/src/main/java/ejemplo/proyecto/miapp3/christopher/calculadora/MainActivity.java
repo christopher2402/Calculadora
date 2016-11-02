@@ -11,13 +11,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, cero, suma, resta, multi, divi, igual,reiniciar;
     TextView resultado, calculo;
-    private int numero1 = 0, numero2 = 0, numero = 0;
+    private double numero1 = 0, numero2 = 0, numero = 0;
     private double res;
     private String operador = "";
     private String acumulador = "";
-
-    //Probando commit
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,10 +140,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 operador = "/";
                 break;
             case R.id.igual:
-                numero = Integer.parseInt(acumulador);
+                numero = Double.parseDouble(acumulador);
                 numero2 = numero;
                 resultado.setText(numero1+" "+operador+" "+numero2);
-                calculo.setText(""+calculado(numero1,numero2,operador));
+                numero = calculado(numero1,numero2,operador);
+                calculo.setText(""+numero);
                 break;
             case R.id.button:
                 resultado.setText("resultado");
@@ -159,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public double calculado(int numero1, int numero2 , String operador){
+    public double calculado(double numero1, double numero2 , String operador){
 
         double resultado = 0;
 

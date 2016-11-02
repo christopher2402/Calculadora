@@ -36,7 +36,7 @@
 
         <Button
             android:text="Reiniciar"
-            android:layout_width="match_parent"
+            android:layout_width="321dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="13dp"
             android:layout_marginStart="13dp"
@@ -163,7 +163,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/igual"
-                android:background="@color/orange"
                 android:id="@+id/igual"/>
             <Button
                 android:layout_width="wrap_content"
