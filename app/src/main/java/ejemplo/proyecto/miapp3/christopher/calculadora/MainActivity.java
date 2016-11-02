@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private int numero1 = 0, numero2 = 0, numero = 0;
     private double res;
     private String operador = "";
+    private String acumulador = "";
 
 
     @Override
