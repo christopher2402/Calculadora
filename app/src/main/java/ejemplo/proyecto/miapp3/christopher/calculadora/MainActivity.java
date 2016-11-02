@@ -1,5 +1,6 @@
 package ejemplo.proyecto.miapp3.christopher.calculadora;
 
+import android.support.annotation.IntDef;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -69,70 +70,80 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId())
         {
             case R.id.cero:
-                calculo.setText("0");
                 numero = 0;
+                acumulador += "0";
+                calculo.setText(acumulador);
                 break;
             case R.id.uno:
-                calculo.setText("1");
-                numero = 1;
+                acumulador += "1";
+                calculo.setText(acumulador);
                 break;
             case R.id.dos:
-                calculo.setText("2");
-                numero = 2;
+                acumulador += "2";
+                calculo.setText(acumulador);
                 break;
             case R.id.tres:
-                calculo.setText("3");
-                numero = 3;
+                acumulador += "3";
+                calculo.setText(acumulador);
                 break;
             case R.id.cuatro:
-                calculo.setText("4");
-                numero = 4;
+                acumulador += "4";
+                calculo.setText(acumulador);
                 break;
             case R.id.cinco:
-                calculo.setText("5");
-                numero = 5;
+                acumulador += "5";
+                calculo.setText(acumulador);
                 break;
             case R.id.seis:
-                calculo.setText("6");
-                numero = 6;
+                acumulador += "6";
+                calculo.setText(acumulador);
                 break;
             case R.id.siete:
-                calculo.setText("7");
-                numero = 7;
+                acumulador += "7";
+                calculo.setText(acumulador);
                 break;
             case R.id.ocho:
-                calculo.setText("8");
-                numero = 8;
+                acumulador += "8";
+                calculo.setText(acumulador);
                 break;
             case R.id.nueve:
-                calculo.setText("9");
-                numero = 9;
+                acumulador += "9";
+                calculo.setText(acumulador);
                 break;
             case R.id.suma:
+                numero = Integer.parseInt(acumulador);
                 resultado.setText(numero+ " + ");
                 numero1 = numero;
                 numero = 0;
+                acumulador = "";
                 operador = "+";
                 break;
             case R.id.resta:
+                numero = Integer.parseInt(acumulador);
                 resultado.setText(numero+ " - ");
                 numero1 = numero;
                 numero = 0;
+                acumulador = "";
                 operador = "-";
                 break;
             case R.id.multiplicacion:
+                numero = Integer.parseInt(acumulador);
                 resultado.setText(numero+ " x ");
                 numero1 = numero;
                 numero = 0;
+                acumulador = "";
                 operador = "x";
                 break;
             case R.id.division:
+                numero = Integer.parseInt(acumulador);
                 resultado.setText(numero+ " / ");
                 numero1 = numero;
                 numero = 0;
+                acumulador = "";
                 operador = "/";
                 break;
             case R.id.igual:
+                numero = Integer.parseInt(acumulador);
                 numero2 = numero;
                 resultado.setText(numero1+" "+operador+" "+numero2);
                 calculo.setText(""+calculado(numero1,numero2,operador));
@@ -143,6 +154,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 numero2 = 0;
                 numero1 = 0;
                 operador = "";
+                acumulador = "";
                 break;
         }
     }
